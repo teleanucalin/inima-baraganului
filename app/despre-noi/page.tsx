@@ -1,0 +1,217 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { story, leadership } from "@/lib/data"
+import { Heart, Leaf, Users, Award } from "lucide-react"
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+export default function DespreNoi() {
+  const values = [
+    {
+      icon: Heart,
+      title: "Pasiune",
+      description: "Agricultură făcută cu suflet și dedicare pentru pământul nostru"
+    },
+    {
+      icon: Leaf,
+      title: "Sustenabilitate",
+      description: "Respectăm natura și lucrăm pentru un viitor verde"
+    },
+    {
+      icon: Users,
+      title: "Comunitate",
+      description: "Împreună suntem mai puternici și mai competitivi"
+    },
+    {
+      icon: Award,
+      title: "Excelență",
+      description: "Calitate premium în tot ce facem și producem"
+    }
+  ]
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-b from-primary/10 to-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-3xl mx-auto text-center"
+            initial="initial"
+            animate="animate"
+            variants={fadeIn}
+          >
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-primary">
+              Povestea Noastră
+            </h1>
+            <p className="text-xl text-muted-foreground italic">
+              {story.tagline}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Story Section - Split Layout */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="prose prose-lg max-w-none">
+                {story.about.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4 text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Image Grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/WhatsApp Image 2025-12-02 at 13.52.08.jpeg"
+                  alt="Câmp agricol"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/WhatsApp Image 2025-12-02 at 13.52.08 (1).jpeg"
+                  alt="Recoltă"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-64 rounded-lg overflow-hidden col-span-2">
+                <Image
+                  src="/images/WhatsApp Image 2025-12-02 at 13.52.09.jpeg"
+                  alt="Pământ agricol"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why "Inima Bărăganului" Section */}
+      <section className="py-20 bg-surface">
+        <motion.div
+          className="container mx-auto px-4"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl font-bold mb-6 text-primary text-center">
+              De ce "Inima Bărăganului"?
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center">
+              {story.whyName}
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="mb-12 text-center"
+          >
+            <h2 className="font-serif text-4xl font-bold mb-4 text-primary">
+              Valorile Noastre
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Principiile care ne ghidează în fiecare zi
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="text-center h-full">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      <value.icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{value.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+        <motion.div
+          className="container mx-auto px-4"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-4xl font-bold mb-12 text-primary text-center">
+              Conducerea
+            </h2>
+            <Card className="shadow-lg">
+              <CardHeader className="text-center">
+                <div className="mx-auto w-24 h-24 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
+                  <Award className="w-12 h-12 text-secondary" />
+                </div>
+                <CardTitle className="text-2xl mb-2">
+                  {leadership.president.name}
+                </CardTitle>
+                <p className="text-secondary font-semibold">
+                  {leadership.president.title}
+                </p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-muted-foreground leading-relaxed">
+                  {leadership.president.description}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </motion.div>
+      </section>
+    </div>
+  )
+}
