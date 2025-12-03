@@ -35,7 +35,7 @@ export default function Contact() {
     }
 
     // In a real app, you would send this to a backend
-    console.log("Form submitted:", formData)
+    // TODO: Implement backend API endpoint for form submission
     setSubmitted(true)
 
     // Reset form after 3 seconds
