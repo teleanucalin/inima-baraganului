@@ -38,7 +38,7 @@ export default function Home() {
           >
             <source src="/video/3115488-uhd_3840_2160_24fps-2.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75" />
         </div>
 
         {/* Content */}
@@ -48,10 +48,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-balance">
+            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-balance drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Agricultură făcută cu suflet în Bărăgan
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
+            <p className="text-xl md:text-2xl mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Grup de Producători Recunoscut • Tradiție & Performanță
             </p>
             <Link href="/proiecte">
