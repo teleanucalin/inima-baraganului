@@ -27,15 +27,17 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
+        {/* Background Video with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/video/3115488-uhd_3840_2160_24fps-2.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         </div>
 
