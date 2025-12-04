@@ -44,6 +44,26 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        wheat: {
+          DEFAULT: 'hsl(var(--wheat-gold))',
+          foreground: 'hsl(var(--wheat-gold-foreground))',
+        },
+        soil: {
+          DEFAULT: 'hsl(var(--soil-brown))',
+          foreground: 'hsl(var(--soil-brown-foreground))',
+        },
+        sky: {
+          DEFAULT: 'hsl(var(--sky-blue))',
+          foreground: 'hsl(var(--sky-blue-foreground))',
+        },
+        olive: {
+          DEFAULT: 'hsl(var(--olive-green))',
+          foreground: 'hsl(var(--olive-green-foreground))',
+        },
+        harvest: {
+          DEFAULT: 'hsl(var(--harvest-orange))',
+          foreground: 'hsl(var(--harvest-orange-foreground))',
+        },
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Merriweather', 'serif'],

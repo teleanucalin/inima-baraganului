@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
-import { Navbar } from "@/components/navbar"
+import { MegaMenu } from "@/components/mega-menu"
 import { Footer } from "@/components/footer"
 
 const inter = Inter({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="ro" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <Navbar />
+        <MegaMenu />
         <main className="flex-1">
           {children}
         </main>

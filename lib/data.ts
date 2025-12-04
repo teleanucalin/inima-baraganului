@@ -130,6 +130,34 @@ export const stats = [
   },
 ];
 
+// G2. Hero Carousel Slides
+export const heroSlides = [
+  {
+    image: "/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg",
+    title: "Agricultură făcută cu suflet în Bărăgan",
+    subtitle: "Grup de Producători Recunoscut • Tradiție & Performanță",
+    alt: "Câmpurile de cereale din Bărăgan"
+  },
+  {
+    image: "/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg", // TODO: Replace with harvest image
+    title: "Recolta anului - roadele muncii noastre",
+    subtitle: "75% din producție comercializată împreună",
+    alt: "Recoltarea cerealelor"
+  },
+  {
+    image: "/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg", // TODO: Replace with community image
+    title: "Comunitate unită pentru viitorul agriculturii",
+    subtitle: "5 membri fondatori • Sute de hectare cultivate",
+    alt: "Fermierii cooperativei"
+  },
+  {
+    image: "/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg", // TODO: Replace with sunset/landscape
+    title: "Aici, în mijlocul câmpiei, pulsează viața autentică",
+    subtitle: "Tradițiile și oamenii trăiesc în armonie cu pământul",
+    alt: "Apus de soare peste câmpurile Bărăganului"
+  },
+];
+
 // H. Contact Information
 export const contact = {
   address: "Sat Călărașii Vechi, Comuna Cuza Vodă, Str. Principală, Nr. 17, Jud. Călărași",
@@ -160,11 +188,106 @@ export const legalLinks = {
   },
 };
 
-// J. Navigation Links
+// J. Navigation Links (Legacy - for mobile)
 export const navLinks = [
   { name: "Acasă", href: "/" },
   { name: "Povestea Noastră", href: "/despre-noi" },
   { name: "Membri", href: "/membri" },
   { name: "Transparență (AFIR)", href: "/proiecte" },
   { name: "Contact", href: "/contact" },
+];
+
+// J2. Mega Menu Navigation Structure
+export interface NavItem {
+  name: string;
+  href: string;
+  description?: string;
+}
+
+export interface NavCategory {
+  title: string;
+  items: NavItem[];
+}
+
+export const megaMenuCategories: NavCategory[] = [
+  {
+    title: "Despre Noi",
+    items: [
+      {
+        name: "Povestea Noastră",
+        href: "/despre-noi",
+        description: "Descoperă istoria cooperativei"
+      },
+      {
+        name: "Echipa & Conducere",
+        href: "/despre-noi#echipa",
+        description: "Cunoaște-ne leadership-ul"
+      },
+      {
+        name: "Viziune & Misiune",
+        href: "/despre-noi#viziune",
+        description: "Scopurile noastre"
+      },
+      {
+        name: "Cronologie",
+        href: "/despre-noi#cronologie",
+        description: "Drumul nostru de la 2021"
+      },
+    ],
+  },
+  {
+    title: "Membri & Comunitate",
+    items: [
+      {
+        name: "Membrii Fondatori",
+        href: "/membri",
+        description: "Fermierii noștri dedicați"
+      },
+      {
+        name: "Cum să Te Alături",
+        href: "/membri#alatura-te",
+        description: "Procesul de înscriere"
+      },
+      {
+        name: "Beneficii Cooperare",
+        href: "/membri#beneficii",
+        description: "Avantajele de membru"
+      },
+    ],
+  },
+  {
+    title: "Transparență",
+    items: [
+      {
+        name: "Rapoarte AFIR",
+        href: "/proiecte",
+        description: "Vizualizează datele noastre"
+      },
+      {
+        name: "Obiective Comercializare",
+        href: "/proiecte#obiective",
+        description: "Progresul nostru"
+      },
+      {
+        name: "Documente Legale",
+        href: "/proiecte#documente",
+        description: "Informații oficiale"
+      },
+    ],
+  },
+  {
+    title: "Contact",
+    items: [
+      {
+        name: "Contactează-ne",
+        href: "/contact",
+        description: "Trimite-ne un mesaj"
+      },
+      {
+        name: "Locație",
+        href: "/contact#locatie",
+        description: "Unde ne găsești"
+      },
+    ],
+  },
 ];

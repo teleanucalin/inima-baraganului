@@ -26,6 +26,18 @@
     --input: 0 0% 89.8%;
     --ring: 159 47% 20%;
     --radius: 0.5rem;
+
+    /* Extended Agricultural Color Palette */
+    --wheat-gold: 48 89% 74%;
+    --wheat-gold-foreground: 159 47% 20%;
+    --soil-brown: 30 23% 45%;
+    --soil-brown-foreground: 0 0% 98%;
+    --sky-blue: 197 71% 73%;
+    --sky-blue-foreground: 0 0% 3.9%;
+    --olive-green: 80 45% 35%;
+    --olive-green-foreground: 0 0% 98%;
+    --harvest-orange: 33 100% 50%;
+    --harvest-orange-foreground: 0 0% 98%;
   }
 }
 

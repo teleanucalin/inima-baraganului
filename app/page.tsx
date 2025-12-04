@@ -4,7 +4,9 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { stats } from "@/lib/data"
+import { HeroCarousel } from "@/components/hero-carousel"
+import { Newsletter } from "@/components/newsletter"
+import { stats, heroSlides } from "@/lib/data"
 import { CheckCircle2, TrendingUp, Users } from "lucide-react"
 
 const fadeIn = {
@@ -24,52 +26,14 @@ const staggerContainer = {
 export default function Home() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-balance">
-              Agricultură făcută cu suflet în Bărăgan
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Grup de Producători Recunoscut • Tradiție & Performanță
-            </p>
-            <Link href="/proiecte">
-              <Button size="lg" className="text-lg">
-                Vezi Rapoartele AFIR
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
-          </div>
-        </motion.div>
-      </section>
+      {/* Hero Carousel Section */}
+      <HeroCarousel slides={heroSlides} autoPlayInterval={6000}>
+        <Link href="/proiecte">
+          <Button size="lg" className="text-lg">
+            Vezi Rapoartele AFIR
+          </Button>
+        </Link>
+      </HeroCarousel>
 
       {/* Stats Grid */}
       <section className="py-20 bg-background">
@@ -143,6 +107,9 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* Newsletter Section */}
+      <Newsletter />
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">

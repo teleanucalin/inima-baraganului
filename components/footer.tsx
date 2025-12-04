@@ -1,11 +1,12 @@
 import Link from "next/link"
 import { legalIdentity, legalLinks, contact } from "@/lib/data"
+import { Newsletter } from "@/components/newsletter"
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Company Info */}
           <div>
             <h3 className="font-serif text-lg font-semibold mb-4">
@@ -65,6 +66,17 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          {/* Newsletter Signup */}
+          <div>
+            <h3 className="font-serif text-lg font-semibold mb-4">
+              Newsletter
+            </h3>
+            <p className="text-sm text-primary-foreground/80 mb-4">
+              Primește actualizări despre activitățile cooperativei.
+            </p>
+            <Newsletter variant="compact" />
           </div>
         </div>
 
