@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CurveDivider } from "@/components/curve-divider"
 import { stats } from "@/lib/data"
 import { CheckCircle2, TrendingUp, Users } from "lucide-react"
 
@@ -71,6 +72,85 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Curve Divider */}
+      <CurveDivider fillColor="#f5f5f0" />
+
+      {/* CTA Cards Section */}
+      <section className="py-20 bg-[#f5f5f0]">
+        <motion.div
+          className="container mx-auto px-4"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 - Visit Farm */}
+            <motion.div variants={fadeIn}>
+              <Link href="/despre-noi">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                  <div className="relative h-96">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
+                      Despre Noi
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Card 2 - Markets */}
+            <motion.div variants={fadeIn}>
+              <Link href="/membri">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                  <div className="relative h-96">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
+                      Membrii
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Card 3 - Projects */}
+            <motion.div variants={fadeIn}>
+              <Link href="/proiecte">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                  <div className="relative h-96">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
+                      Proiecte
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Curve Divider */}
+      <CurveDivider fillColor="#ffffff" flip />
+
       {/* Stats Grid */}
       <section className="py-20 bg-background">
         <motion.div
@@ -80,7 +160,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => {
               const icons = [Users, CheckCircle2, TrendingUp]
               const Icon = icons[index]
@@ -110,8 +190,11 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Curve Divider */}
+      <CurveDivider fillColor="#f5f5f0" />
+
       {/* Mission Section */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-[#f5f5f0]">
         <motion.div
           className="container mx-auto px-4"
           initial="initial"
@@ -143,6 +226,9 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* Curve Divider */}
+      <CurveDivider fillColor="hsl(159 47% 20%)" />
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
