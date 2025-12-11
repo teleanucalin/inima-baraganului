@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "node",
+      "args": [
+        "/Users/calinteleanu/repos/inima-baraganului/.mcp-servers/github-mcp.js"
+      ],
+      "env": {
+        "GH_VERSION": "2.83.1"
+      }
+    },
+    "filesystem": {
+      "command": "node",
+      "args": [
+        "/Users/calinteleanu/repos/inima-baraganului/.mcp-servers/filesystem-mcp.js"
+      ],
+      "env": {
+        "MCP_BASE_PATH": "/Users/calinteleanu/repos/inima-baraganului"
+      }
+    },
+    "memory": {
+      "command": "node",
+      "args": [
+        "/Users/calinteleanu/repos/inima-baraganului/.mcp-servers/memory-mcp.js"
+      ],
+      "env": {
+        "MCP_STORAGE_PATH": "/Users/calinteleanu/repos/inima-baraganului/.mcp-memory"
+      }
+    }
+  }
+}
