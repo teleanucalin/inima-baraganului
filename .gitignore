@@ -38,6 +38,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# playwright tests
+/.playwright-mcp/
+
+# mcp configuration (contains secrets)
 # MCP memory storage
 /.mcp-memory/
 .mcp.json
