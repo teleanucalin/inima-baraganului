@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { story, leadership } from "@/lib/data"
 import { Heart, Leaf, Users, Award } from "lucide-react"
+import { CurveDivider } from "@/components/curve-divider"
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -130,8 +131,13 @@ export default function DespreNoi() {
         </div>
       </section>
 
+      {/* Curve Divider */}
+      <div className="-mb-1">
+        <CurveDivider fillColor="#1B4D3E" />
+      </div>
+
       {/* Why "Inima Bărăganului" Section */}
-      <section className="py-20 bg-surface">
+      <section className="py-20 bg-primary">
         <motion.div
           className="container mx-auto px-4"
           initial="initial"
@@ -139,16 +145,27 @@ export default function DespreNoi() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-4xl font-bold mb-6 text-primary text-center">
-              De ce "Inima Bărăganului"?
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed text-center">
-              {story.whyName}
-            </p>
+          <div className="max-w-3xl mx-auto">
+            <Card className="text-center shadow-lg">
+              <CardHeader>
+                <CardTitle className="font-serif text-4xl font-bold text-primary mb-4">
+                  De ce "Inima Bărăganului"?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {story.whyName}
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </motion.div>
       </section>
+
+      {/* Curve Divider */}
+      <div className="-mt-1">
+        <CurveDivider fillColor="#1B4D3E" flip />
+      </div>
 
       {/* Values Section */}
       <section className="py-20">
