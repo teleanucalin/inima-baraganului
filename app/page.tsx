@@ -49,30 +49,37 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/images/logo.png"
+                alt="Inima Bărăganului Logo"
+                width={250}
+                height={250}
+                className="drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+                priority
+              />
+            </div>
             <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-balance drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Agricultură făcută cu suflet în Bărăgan
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Grup de Producători Recunoscut • Tradiție & Performanță
             </p>
-            <Link href="/proiecte">
-              <Button size="lg" className="text-lg">
-                Vezi Rapoartele AFIR
-              </Button>
-            </Link>
+            {/* Funding Logos */}
+            <div className="flex justify-center">
+              <Image
+                src="/images/funding-logos.png"
+                alt="EU, Guvernul României, PNDR, AFIR"
+                width={816}
+                height={153}
+                className="h-12 w-auto opacity-90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+              />
+            </div>
           </motion.div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          {/* Funding Logos */}
-          <Image
-            src="/images/funding-logos.png"
-            alt="EU, Guvernul României, PNDR, AFIR"
-            width={816}
-            height={153}
-            className="h-8 w-auto opacity-90"
-          />
           {/* Down Arrow */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -132,7 +139,7 @@ export default function Home() {
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                       style={{
-                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
+                        backgroundImage: "url('/images/about-us.jpg')",
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
@@ -144,27 +151,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Card 2 - Markets */}
-            <motion.div variants={fadeIn}>
-              <Link href="/membri">
-                <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                  <div className="relative h-96">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                      style={{
-                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
-                    <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
-                      Membrii
-                    </h3>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Card 3 - Projects */}
+            {/* Card 2 - Projects */}
             <motion.div variants={fadeIn}>
               <Link href="/proiecte">
                 <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
@@ -172,12 +159,32 @@ export default function Home() {
                     <div
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                       style={{
-                        backgroundImage: "url('/images/WhatsApp Image 2025-12-02 at 13.52.09 (1).jpeg')",
+                        backgroundImage: "url('/images/about-agricultural-equipment.jpg')",
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
                     <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
                       Proiecte
+                    </h3>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Card 3 - Markets */}
+            <motion.div variants={fadeIn}>
+              <Link href="/membri">
+                <div className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                  <div className="relative h-96">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        backgroundImage: "url('/images/members.jpg')",
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                    <h3 className="absolute bottom-8 left-8 text-white text-3xl font-bold uppercase tracking-wider">
+                      Membrii
                     </h3>
                   </div>
                 </div>
