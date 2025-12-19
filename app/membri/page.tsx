@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { members } from "@/lib/data"
@@ -17,22 +18,38 @@ export default function Membri() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4">
+      <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/background-membri.jpg"
+            alt="Membri Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/30" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4">
           <motion.div
             className="max-w-3xl mx-auto text-center"
             initial="initial"
             animate="animate"
             variants={fadeIn}
           >
-            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-primary">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               Membrii Noștri
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Fermierii și companiile care formează inima cooperativei noastre
             </p>
           </motion.div>
         </div>
+
+        {/* Gradient transition to next section - smoother and taller */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-background/50 to-background z-[5]" />
       </section>
 
       {/* Members Grid */}
