@@ -112,7 +112,7 @@ export default function DespreNoi() {
               </div>
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/WhatsApp Image 2025-12-02 at 13.52.08 (1).jpeg"
+                  src="/images/despre-noi-echipament.jpeg"
                   alt="Recoltă"
                   fill
                   className="object-cover"

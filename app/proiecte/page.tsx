@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { afirData, timeline } from "@/lib/data"
 import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts"
-import { AlertCircle, CheckCircle2, TrendingUp } from "lucide-react"
+import { CheckCircle2, TrendingUp } from "lucide-react"
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
