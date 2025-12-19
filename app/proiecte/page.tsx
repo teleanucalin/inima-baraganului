@@ -52,7 +52,7 @@ export default function Proiecte() {
       </section>
 
       {/* Compliance Warning */}
-      <section className="py-8 bg-accent/5 border-y border-accent/20">
+      <section className="py-8 bg-primary/5 border-y border-primary/20">
         <div className="container mx-auto px-4">
           <motion.div
             className="flex items-start gap-4 max-w-4xl mx-auto"
@@ -60,7 +60,7 @@ export default function Proiecte() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <AlertCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+            <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-semibold text-lg mb-1">Conformitate Legală</h3>
               <p className="text-muted-foreground">
@@ -249,8 +249,8 @@ export default function Proiecte() {
                   >
                     {/* Timeline dot */}
                     <div className="relative z-10 flex-shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">{item.year}</span>
+                      <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center px-2">
+                        <span className="text-white font-bold text-center text-sm leading-tight">{item.year}</span>
                       </div>
                     </div>
 
