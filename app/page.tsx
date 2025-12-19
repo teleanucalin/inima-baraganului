@@ -25,7 +25,7 @@ const staggerContainer = {
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ backgroundColor: '#f5f5f0' }}>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Video with Overlay */}
@@ -114,9 +114,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curve Divider */}
-      <CurveDivider fillColor="#f5f5f0" />
-
       {/* CTA Cards Section */}
       <section id="next-section" className="py-20 bg-[#f5f5f0]">
         <motion.div
@@ -191,10 +188,10 @@ export default function Home() {
       </section>
 
       {/* Curve Divider */}
-      <CurveDivider fillColor="#ffffff" flip />
+      <CurveDivider fillColor="#1B4D3E" />
 
       {/* Stats Grid */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-primary">
         <motion.div
           className="container mx-auto px-4"
           initial="initial"
@@ -233,7 +230,9 @@ export default function Home() {
       </section>
 
       {/* Curve Divider */}
-      <CurveDivider fillColor="#f5f5f0" />
+      <div className="-mt-1"> 
+        <CurveDivider fillColor="#1B4D3E" flip />
+      </div>
 
       {/* Mission Section */}
       <section className="py-20 bg-[#f5f5f0]">
@@ -270,7 +269,7 @@ export default function Home() {
       </section>
 
       {/* Curve Divider */}
-      <CurveDivider fillColor="hsl(159 47% 20%)" />
+      <CurveDivider fillColor="#1B4D3E" />
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
