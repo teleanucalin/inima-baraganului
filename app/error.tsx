@@ -52,8 +52,8 @@ export default function Error({
 
         <p className="text-sm text-muted-foreground mt-8">
           Dacă problema persistă, te rugăm să ne contactezi la{' '}
-          <a href="mailto:contact@inimabaraganului.ro" className="text-primary hover:underline">
-            contact@inimabaraganului.ro
+          <a href="mailto:inimabaraganului@yahoo.com" className="text-primary hover:underline">
+            inimabaraganului@yahoo.com
           </a>
         </p>
       </div>

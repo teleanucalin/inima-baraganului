@@ -45,3 +45,28 @@ next-env.d.ts
 # MCP memory storage
 /.mcp-memory/
 .mcp.json
+/.mcp-servers/
+
+# Development context and planning
+/context/
+/images/
+/content_to_include/
+/errors_vercel/
+/indications/
+
+# Development documentation
+AUDIT_PROMPT.md
+BUILD_SUMMARY.md
+IMAGE_OPTIMIZATION_REPORT.md
+MCP_RECOMMENDATIONS.md
+MCP_SETUP_GUIDE.md
+NEXT_STEPS.md
+RAPORT_AUDIT_COMPLET.md
+SETUP_COMPLETE.md
+CLEANUP_REPORT.md
+UI_IMPROVEMENT_PLAN.md
+CLEANUP_AND_AUDIT_PROMPT.md
+prompt.md
+
+# Image backups
+/public/images_backup_original/

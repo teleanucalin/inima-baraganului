@@ -202,7 +202,7 @@ export default function PoliticaConfidentialitate() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-sm">
-                      <strong>Email:</strong> contact@inimabaraganului.ro
+                      <strong>Email:</strong> inimabaraganului@yahoo.com
                     </p>
                     <p className="text-sm">
                       <strong>Adresă:</strong> {legalIdentity.address}
