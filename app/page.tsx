@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CurveDivider } from "@/components/curve-divider"
@@ -65,9 +66,11 @@ export default function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           {/* Funding Logos */}
-          <img
+          <Image
             src="/images/funding-logos.png"
             alt="EU, Guvernul României, PNDR, AFIR"
+            width={816}
+            height={153}
             className="h-8 w-auto opacity-90"
           />
           {/* Down Arrow */}
