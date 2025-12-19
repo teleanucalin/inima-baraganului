@@ -19,11 +19,14 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Apply solid background when scrolled OR when mobile menu is open
+  const shouldUseSolidBackground = scrolled || isOpen
+
   return (
     <nav
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        scrolled
+        shouldUseSolidBackground
           ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
           : "bg-transparent border-b border-white/10"
       )}
@@ -32,7 +35,7 @@ export function Navbar() {
         <div
           className={cn(
             "flex items-center justify-between transition-all duration-300",
-            scrolled ? "h-16" : "h-20"
+            shouldUseSolidBackground ? "h-16" : "h-20"
           )}
         >
           {/* Logo */}
@@ -41,7 +44,7 @@ export function Navbar() {
               <span
                 className={cn(
                   "font-bold font-serif transition-all duration-300",
-                  scrolled
+                  shouldUseSolidBackground
                     ? "text-lg text-primary"
                     : "text-2xl text-white"
                 )}
@@ -51,7 +54,7 @@ export function Navbar() {
               <span
                 className={cn(
                   "text-xs transition-all duration-300",
-                  scrolled
+                  shouldUseSolidBackground
                     ? "text-secondary"
                     : "text-white/90"
                 )}
@@ -69,7 +72,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-sm font-medium uppercase tracking-wide transition-colors duration-300",
-                  scrolled
+                  shouldUseSolidBackground
                     ? "text-gray-900 hover:text-primary"
                     : "text-white hover:text-white/80"
                 )}
@@ -84,7 +87,7 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
               "md:hidden rounded-md p-2 transition-colors duration-300",
-              scrolled
+              shouldUseSolidBackground
                 ? "text-gray-900 hover:bg-gray-100"
                 : "text-white hover:bg-white/10"
             )}
@@ -108,7 +111,7 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "text-sm font-medium transition-colors duration-300",
-                  scrolled
+                  shouldUseSolidBackground
                     ? "text-gray-900 hover:text-primary"
                     : "text-white hover:text-white/80"
                 )}
