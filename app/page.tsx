@@ -188,7 +188,9 @@ export default function Home() {
       </section>
 
       {/* Curve Divider */}
-      <CurveDivider fillColor="#1B4D3E" />
+      <div className="-mb-1"> 
+        <CurveDivider fillColor="#1B4D3E" />
+      </div>
 
       {/* Stats Grid */}
       <section className="py-20 bg-primary">
@@ -269,7 +271,9 @@ export default function Home() {
       </section>
 
       {/* Curve Divider */}
-      <CurveDivider fillColor="#1B4D3E" />
+      <div className="-mb-1"> 
+        <CurveDivider fillColor="#1B4D3E" />
+      </div>
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
