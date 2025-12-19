@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CurveDivider } from "@/components/curve-divider"
 import { stats } from "@/lib/data"
-import { CheckCircle2, TrendingUp, Users } from "lucide-react"
+import { CheckCircle2, TrendingUp, Users, ChevronDown } from "lucide-react"
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -63,22 +64,61 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
-          </div>
-        </motion.div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          {/* Funding Logos */}
+          <Image
+            src="/images/funding-logos.png"
+            alt="EU, Guvernul României, PNDR, AFIR"
+            width={816}
+            height={153}
+            className="h-8 w-auto opacity-90"
+          />
+          {/* Down Arrow */}
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              const element = document.getElementById('next-section')
+              if (element) {
+                const targetPosition = element.getBoundingClientRect().top + window.pageYOffset
+                const startPosition = window.pageYOffset
+                const distance = targetPosition - startPosition
+                const duration = 1500 // 1.5 seconds for slower scroll
+                let start: number | null = null
+
+                const easeInOutCubic = (t: number): number => {
+                  return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                }
+
+                const animation = (currentTime: number) => {
+                  if (start === null) start = currentTime
+                  const timeElapsed = currentTime - start
+                  const progress = Math.min(timeElapsed / duration, 1)
+                  const ease = easeInOutCubic(progress)
+
+                  window.scrollTo(0, startPosition + distance * ease)
+
+                  if (timeElapsed < duration) {
+                    requestAnimationFrame(animation)
+                  }
+                }
+
+                requestAnimationFrame(animation)
+              }
+            }}
+            className="cursor-pointer"
+          >
+            <ChevronDown className="w-8 h-8 text-white/70" strokeWidth={2.5} />
+          </motion.div>
+        </div>
       </section>
 
       {/* Curve Divider */}
       <CurveDivider fillColor="#f5f5f0" />
 
       {/* CTA Cards Section */}
-      <section className="py-20 bg-[#f5f5f0]">
+      <section id="next-section" className="py-20 bg-[#f5f5f0]">
         <motion.div
           className="container mx-auto px-4"
           initial="initial"
