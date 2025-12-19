@@ -103,7 +103,7 @@ export default function DespreNoi() {
             >
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/WhatsApp Image 2025-12-02 at 13.52.08.jpeg"
+                  src="/images/despre-noi-poza-top.jpeg"
                   alt="Câmp agricol"
                   fill
                   className="object-cover"
@@ -119,7 +119,7 @@ export default function DespreNoi() {
               </div>
               <div className="relative h-64 rounded-lg overflow-hidden col-span-2">
                 <Image
-                  src="/images/WhatsApp Image 2025-12-02 at 13.52.09.jpeg"
+                  src="/images/despre-noi-poza-wide.jpeg"
                   alt="Pământ agricol"
                   fill
                   className="object-cover"
