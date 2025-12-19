@@ -6,8 +6,8 @@ export const legalIdentity = {
   recognition: "Grup de Producători Recunoscut, Aviz Nr. 315 din 07.09.2021",
   address: "Sat Călărașii Vechi, Comuna Cuza Vodă, Str. Principală, Nr. 17, Jud. Călărași",
   products: "Cereale, Plante Oleaginoase, Plante Furajere, Leguminoase",
-  cui: "CUI: [În curs de completare]",
-  regCom: "Reg. Com.: [În curs de completare]",
+  cui: "CUI: 44402085",
+  regCom: "Reg. Com.: C51/4/2021",
 };
 
 // B. The Story (Source: Mail Context)
@@ -133,8 +133,8 @@ export const stats = [
 // H. Contact Information
 export const contact = {
   address: "Sat Călărașii Vechi, Comuna Cuza Vodă, Str. Principală, Nr. 17, Jud. Călărași",
-  email: "contact@inimabaraganului.ro",
-  phone: "+40 XXX XXX XXX",
+  email: "inimabaraganului@yahoo.com",
+  phone: "0726 119 206",
   coordinates: {
     lat: 44.2167,
     lng: 26.6500,
@@ -165,6 +165,6 @@ export const navLinks = [
   { name: "Acasă", href: "/" },
   { name: "Povestea Noastră", href: "/despre-noi" },
   { name: "Membri", href: "/membri" },
-  { name: "Transparență (AFIR)", href: "/proiecte" },
+  { name: "Proiecte", href: "/proiecte" },
   { name: "Contact", href: "/contact" },
 ];
