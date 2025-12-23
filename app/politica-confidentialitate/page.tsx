@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { legalIdentity } from "@/lib/data"
-import { Shield, Lock, Eye, FileText } from "lucide-react"
+import { Shield, Lock, Eye, FileText, Cookie } from "lucide-react"
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -130,6 +130,112 @@ export default function PoliticaConfidentialitate() {
             >
               <Card>
                 <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Cookie className="w-5 h-5 text-primary" />
+                    </div>
+                    Politica de Cookie-uri
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    Acest site folosește cookie-uri pentru a asigura funcționarea corectă și pentru
+                    a îmbunătăți experiența utilizatorilor. Puteți gestiona preferințele de cookie-uri
+                    în orice moment.
+                  </p>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold mb-2 text-primary">Cookie-uri Strict Necesare</h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Aceste cookie-uri sunt esențiale pentru funcționarea site-ului și nu pot fi dezactivate.
+                      </p>
+                      <div className="bg-muted/50 rounded-lg p-4 space-y-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm">
+                          <div className="font-medium">Nume Cookie</div>
+                          <div className="font-medium">Scop</div>
+                          <div className="font-medium">Expirare</div>
+                          <div className="font-medium">Tip</div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm text-muted-foreground">
+                          <div>cc_inima_baraganului</div>
+                          <div>Stochează preferințele cookie</div>
+                          <div>1 an</div>
+                          <div>Necesar</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold mb-2 text-primary">Cookie-uri de Funcționalitate</h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Aceste cookie-uri sunt utilizate de servicii terțe care oferă funcționalități suplimentare pe site-ul nostru.
+                      </p>
+                      <div className="bg-muted/50 rounded-lg p-4 space-y-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm">
+                          <div className="font-medium">Serviciu</div>
+                          <div className="font-medium">Scop</div>
+                          <div className="font-medium">Expirare</div>
+                          <div className="font-medium">Tip</div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm text-muted-foreground">
+                          <div>Google Maps</div>
+                          <div>Afișarea hărților interactive pe pagina de contact</div>
+                          <div>Sesiune</div>
+                          <div>Funcțional</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold mb-2 text-primary">Cookie-uri de Analitică</h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Aceste cookie-uri ne ajută să înțelegem cum vizitatorii interacționează cu site-ul nostru.
+                        Toate datele sunt colectate în mod anonim și necesită consimțământul dumneavoastră.
+                      </p>
+                      <div className="bg-muted/50 rounded-lg p-4 space-y-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm">
+                          <div className="font-medium">Nume Cookie</div>
+                          <div className="font-medium">Scop</div>
+                          <div className="font-medium">Expirare</div>
+                          <div className="font-medium">Tip</div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm text-muted-foreground">
+                          <div>_ga</div>
+                          <div>Analiza traficului Google Analytics</div>
+                          <div>2 ani</div>
+                          <div>Analitic</div>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-sm text-muted-foreground">
+                          <div>_gid</div>
+                          <div>Diferențierea utilizatorilor</div>
+                          <div>24 ore</div>
+                          <div>Analitic</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-border">
+                      <h3 className="font-semibold mb-2">Gestionarea Cookie-urilor</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Puteți gestiona preferințele de cookie-uri în orice moment prin intermediul
+                        barei de cookie-uri care apare la prima vizită sau accesând setările browserului
+                        dumneavoastră. Refuzul cookie-urilor neesențiale nu va afecta funcționalitatea
+                        de bază a site-ului, dar poate limita accesul la anumite caracteristici.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card>
+                <CardHeader>
                   <CardTitle>Drepturile Dumneavoastră GDPR</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -151,7 +257,7 @@ export default function PoliticaConfidentialitate() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
               <Card>
                 <CardHeader>
@@ -171,7 +277,7 @@ export default function PoliticaConfidentialitate() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Card>
                 <CardHeader>
@@ -189,7 +295,7 @@ export default function PoliticaConfidentialitate() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
             >
               <Card className="bg-primary/5 border-primary/20">
                 <CardHeader>
@@ -215,10 +321,10 @@ export default function PoliticaConfidentialitate() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
               className="text-center text-sm text-muted-foreground"
             >
-              <p>Ultima actualizare: 02 Decembrie 2025</p>
+              <p>Ultima actualizare: 23 Decembrie 2024</p>
             </motion.div>
           </div>
         </div>

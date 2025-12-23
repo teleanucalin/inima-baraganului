@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
+import "@/styles/cookie-consent.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { CookieConsentBanner } from "@/components/cookie-consent"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +35,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieConsentBanner />
       </body>
     </html>
   )
