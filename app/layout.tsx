@@ -20,6 +20,63 @@ export const metadata: Metadata = {
   title: "Inima Bărăganului | Cooperativă Agricolă & Grup de Producători",
   description: "Grup de Producători Recunoscut din inima Bărăganului. Agricultură făcută cu suflet. Tradiție & Performanță.",
   keywords: ["cooperativă agricolă", "grup producători", "Bărăgan", "cereale", "agricultură"],
+  openGraph: {
+    title: "Inima Bărăganului - Cooperativă Agricolă & Grup de Producători",
+    description: "Grup de Producători Recunoscut din inima Bărăganului. Agricultură făcută cu suflet.",
+    url: "https://inimabaraganului.ro",
+    siteName: "Inima Bărăganului",
+    images: [
+      {
+        url: "https://inimabaraganului.ro/images/logo.png",
+        width: 250,
+        height: 250,
+        alt: "Logo Inima Bărăganului",
+      },
+    ],
+    locale: "ro_RO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Inima Bărăganului - Cooperativă Agricolă",
+    description: "Grup de Producători Recunoscut din inima Bărăganului.",
+  },
+  alternates: {
+    canonical: "https://inimabaraganului.ro",
+  },
+}
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Inima Bărăganului",
+  "description": "Grup de Producători Recunoscut din inima Bărăganului. Agricultură făcută cu suflet. Tradiție & Performanță.",
+  "url": "https://inimabaraganului.ro",
+  "logo": "https://inimabaraganului.ro/images/logo.png",
+  "image": "https://inimabaraganului.ro/images/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sat Călărașii Vechi, Comuna Cuza Vodă, Str. Principală, Nr. 17",
+    "addressLocality": "Călărași",
+    "addressRegion": "Călărași",
+    "postalCode": "",
+    "addressCountry": "RO"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+40-726-119-206",
+    "email": "inimabaraganului@yahoo.com",
+    "contactType": "Customer Service",
+    "areaServed": "RO",
+    "availableLanguage": ["Romanian"]
+  },
+  "sameAs": [],
+  "foundingDate": "2020",
+  "knowsAbout": ["Agricultură", "Cereale", "Grup de Producători", "Cooperative Agricole"],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Bărăgan, România"
+  }
 }
 
 export default function RootLayout({
@@ -29,6 +86,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         <a
           href="#main-content"
