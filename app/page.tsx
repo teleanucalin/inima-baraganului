@@ -35,10 +35,15 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            aria-label="Video de fundal cu câmpuri agricole din Bărăgan"
+            title="Panoramă agricolă Bărăgan"
+            className="absolute inset-0 w-full h-full object-cover motion-reduce:hidden"
           >
             <source src="/video/3115488-uhd_3840_2160_24fps-2.mp4" type="video/mp4" />
+            Browserul dumneavoastră nu suportă redarea video.
           </video>
+          {/* Fallback background image for reduced motion preference */}
+          <div className="hidden motion-reduce:block absolute inset-0 w-full h-full bg-cover bg-center" style={{backgroundImage: 'url(/images/background-contact.jpg)'}} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/75" />
         </div>
 
