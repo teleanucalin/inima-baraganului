@@ -27,9 +27,9 @@ Viziunea noastră este simplă dar puternică: să creștem competitivitatea fer
 // C. Leadership
 export const leadership = {
   president: {
-    name: "Ing. Ceaușescu Ramona-Virginia",
+    name: "Ing. Ramona-Virginia Ceaușescu",
     title: "Președinte",
-    description: "Cu o experiență vastă în agricultură și o viziune clară pentru viitorul cooperativei, Ing. Ceaușescu Ramona-Virginia conduce echipa noastră către noi orizonturi.",
+    description: "Inginer agronom, formată într-o familie cu tradiție în agricultură, coordonează Cooperativa Agricolă Inima Bărăganului, promovând colaborarea între fermieri, modernizarea, dezvoltarea durabilă a mediului rural și a agriculturii locale!",
   },
 };
 
