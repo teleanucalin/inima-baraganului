@@ -3,14 +3,14 @@ import { legalIdentity, legalLinks, contact } from "@/lib/data"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer role="contentinfo" aria-label="Informații juridice și contact" className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Company Info */}
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-4">
+            <h2 className="font-serif text-lg font-semibold mb-4">
               {legalIdentity.name}
-            </h3>
+            </h2>
             <p className="text-sm text-primary-foreground/80 mb-2">
               {legalIdentity.recognition}
             </p>
@@ -21,27 +21,32 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-4">Contact</h3>
+            <h2 className="font-serif text-lg font-semibold mb-4">Contact</h2>
             <p className="text-sm text-primary-foreground/80 mb-2">
-              Email: {contact.email}
+              <a href={`mailto:${contact.email}`} className="hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded">
+                Email: {contact.email}
+              </a>
             </p>
             <p className="text-sm text-primary-foreground/80">
-              Telefon: {contact.phone}
+              <a href={`tel:${contact.phone}`} className="hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded">
+                Telefon: {contact.phone}
+              </a>
             </p>
           </div>
 
           {/* Legal Links */}
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-4">
+            <h2 className="font-serif text-lg font-semibold mb-4">
               Informații Legale
-            </h3>
+            </h2>
             <ul className="space-y-2">
               <li>
                 <a
                   href={legalLinks.anpc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  aria-label={`${legalLinks.anpc.name} - ${legalLinks.anpc.description} (se deschide într-o fereastră nouă)`}
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded"
                 >
                   {legalLinks.anpc.name} - {legalLinks.anpc.description}
                 </a>
@@ -51,7 +56,8 @@ export function Footer() {
                   href={legalLinks.sol.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  aria-label={`${legalLinks.sol.name} - ${legalLinks.sol.description} (se deschide într-o fereastră nouă)`}
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded"
                 >
                   {legalLinks.sol.name} - {legalLinks.sol.description}
                 </a>
@@ -59,9 +65,17 @@ export function Footer() {
               <li>
                 <Link
                   href={legalLinks.gdpr.url}
-                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded"
                 >
                   {legalLinks.gdpr.name}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/accesibilitate"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded"
+                >
+                  Declarație de Accesibilitate
                 </Link>
               </li>
             </ul>

@@ -19,11 +19,25 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Handle Escape key to close mobile menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener("keydown", handleEscape)
+    return () => window.removeEventListener("keydown", handleEscape)
+  }, [isOpen])
+
   // Apply solid background when scrolled OR when mobile menu is open
   const shouldUseSolidBackground = scrolled || isOpen
 
   return (
     <nav
+      role="navigation"
+      aria-label="Navigare principală"
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         shouldUseSolidBackground
@@ -39,7 +53,11 @@ export function Navbar() {
           )}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link
+            href="/"
+            className="flex items-center space-x-2"
+            aria-label="Inima Bărăganului - Pagina principală"
+          >
             <div className="flex flex-col">
               <span
                 className={cn(
@@ -71,7 +89,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium uppercase tracking-wide transition-colors duration-300",
+                  "text-sm font-medium uppercase tracking-wide transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1",
                   shouldUseSolidBackground
                     ? "text-gray-900 hover:text-primary"
                     : "text-white hover:text-white/80"
@@ -85,8 +103,11 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
+            aria-controls="mobile-menu"
             className={cn(
-              "md:hidden rounded-md p-2 transition-colors duration-300",
+              "md:hidden rounded-md p-2 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
               shouldUseSolidBackground
                 ? "text-gray-900 hover:bg-gray-100"
                 : "text-white hover:bg-white/10"
@@ -98,19 +119,22 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div
+          id="mobile-menu"
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300",
             isOpen ? "max-h-96 pb-4" : "max-h-0"
           )}
+          aria-hidden={!isOpen}
         >
-          <div className="flex flex-col space-y-4 pt-4">
+          <div className="flex flex-col space-y-4 pt-4" role="menu">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
+                role="menuitem"
                 className={cn(
-                  "text-sm font-medium transition-colors duration-300",
+                  "text-sm font-medium transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1",
                   shouldUseSolidBackground
                     ? "text-gray-900 hover:text-primary"
                     : "text-white hover:text-white/80"
