@@ -166,7 +166,7 @@ Toate datele sunt stocate în `lib/data.ts`:
 ## 🤝 Contact
 
 Pentru întrebări tehnice sau modificări:
-- Email: contact@inimabaraganului.ro
+- Email: inimabaraganului@yahoo.com
 - Adresă: Sat Călărașii Vechi, Comuna Cuza Vodă, Str. Principală, Nr. 17, Jud. Călărași
 
 ---

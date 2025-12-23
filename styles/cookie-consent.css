@@ -1,0 +1,323 @@
+/* Cookie Consent Custom Styling - Inima Bărăganului */
+
+/* Override default colors with site theme */
+:root {
+  --cc-bg: #ffffff;
+  --cc-text: #1f2937;
+  --cc-btn-primary-bg: #1B4D3E;
+  --cc-btn-primary-text: #ffffff;
+  --cc-btn-primary-hover-bg: #153d31;
+  --cc-btn-secondary-bg: #f3f4f6;
+  --cc-btn-secondary-text: #1f2937;
+  --cc-btn-secondary-hover-bg: #e5e7eb;
+  --cc-separator-border-color: #e5e7eb;
+  --cc-cookie-category-block-bg: #f9fafb;
+  --cc-cookie-category-block-bg-hover: #f3f4f6;
+  --cc-toggle-on-bg: #1B4D3E;
+  --cc-toggle-off-bg: #9ca3af;
+  --cc-toggle-on-knob-bg: #ffffff;
+  --cc-toggle-off-knob-bg: #ffffff;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.5);
+  --cc-link-color: #1B4D3E;
+}
+
+/* Consent Modal Styling */
+#cc-main .cm {
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Bottom right positioning with proper spacing */
+#cc-main .cm--box.cm--bottom {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Desktop: position on right side */
+@media (min-width: 768px) {
+  #cc-main .cm--box.cm--bottom.cm--right {
+    right: 20px;
+    left: auto;
+  }
+}
+
+/* Title styling */
+#cc-main .cm__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1B4D3E;
+  margin-bottom: 0.75rem;
+}
+
+/* Description text */
+#cc-main .cm__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Link styling */
+#cc-main .cc-link {
+  color: #1B4D3E;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#cc-main .cc-link:hover {
+  color: #153d31;
+}
+
+/* Button container */
+#cc-main .cm__btns {
+  gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Primary button (Accept All) */
+#cc-main .cm__btn--primary {
+  background-color: #1B4D3E;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#cc-main .cm__btn--primary:hover {
+  background-color: #153d31;
+  transform: translateY(-1px);
+}
+
+#cc-main .cm__btn--primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary button (Essential Only) */
+#cc-main .cm__btn--secondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#cc-main .cm__btn--secondary:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+/* Preferences button */
+#cc-main .cm__btn--tertiary {
+  background-color: transparent;
+  color: #1B4D3E;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+#cc-main .cm__btn--tertiary:hover {
+  color: #153d31;
+}
+
+/* Footer styling */
+#cc-main .cm__footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+}
+
+/* Preferences Modal */
+#cc-main .pm {
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#cc-main .pm__header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#cc-main .pm__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1B4D3E;
+}
+
+#cc-main .pm__close-btn {
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+#cc-main .pm__close-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Preferences sections */
+#cc-main .pm__section {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#cc-main .pm__section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1B4D3E;
+  margin-bottom: 0.5rem;
+}
+
+#cc-main .pm__section-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Toggle switches */
+#cc-main .section__toggle {
+  margin-top: 1rem;
+}
+
+#cc-main .section__toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+#cc-main .section__toggle-wrapper:hover {
+  background-color: #f3f4f6;
+}
+
+/* Cookie table */
+#cc-main .cookie-table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+#cc-main .cookie-table th {
+  background-color: #f9fafb;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1B4D3E;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+#cc-main .cookie-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+/* Preferences modal buttons */
+#cc-main .pm__btns {
+  padding: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  #cc-main .cm--box.cm--bottom {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    margin: 0;
+  }
+
+  #cc-main .cm__btns {
+    flex-direction: column;
+  }
+
+  #cc-main .cm__btn--primary,
+  #cc-main .cm__btn--secondary,
+  #cc-main .cm__btn--tertiary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #cc-main .pm {
+    max-width: 95vw;
+    margin: 2.5vh auto;
+  }
+
+  #cc-main .pm__btns {
+    flex-direction: column;
+  }
+
+  #cc-main .pm__btns button {
+    width: 100%;
+  }
+}
+
+/* Ensure no layout shift */
+#cc-main {
+  z-index: 9999;
+}
+
+/* Smooth animations */
+#cc-main .cm,
+#cc-main .pm {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus states for accessibility */
+#cc-main button:focus,
+#cc-main a:focus {
+  outline: 2px solid #1B4D3E;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  #cc-main .cm,
+  #cc-main .pm {
+    animation: none;
+  }
+
+  #cc-main button,
+  #cc-main a {
+    transition: none;
+  }
+}
