@@ -226,8 +226,14 @@ export default function DespreNoi() {
             </h2>
             <Card className="shadow-lg">
               <CardHeader className="text-center">
-                <div className="mx-auto w-24 h-24 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                  <Award className="w-12 h-12 text-secondary" />
+                <div className="mx-auto w-24 h-24 rounded-full overflow-hidden mb-4">
+                  <Image
+                    src="/images/poza_conducere.jpeg"
+                    alt={leadership.president.name}
+                    width={96}
+                    height={96}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <CardTitle className="text-2xl mb-2">
                   {leadership.president.name}
